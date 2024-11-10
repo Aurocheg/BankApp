@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
+    private let cards: [Card] = Card.generateCards()
     
     private let leftBarButtonItem = {
         let view = UIImageView()
@@ -61,6 +62,19 @@ class MainViewController: UIViewController {
         return button
     }()
     
+    private lazy var cardsCollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = Const.cardLineSpacing
+        layout.itemSize = Const.cardSize
+        layout.scrollDirection = .horizontal
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.showsHorizontalScrollIndicator = false
+        view.delegate = self
+        view.dataSource = self
+        view.register(CardCollectionCell.self, forCellWithReuseIdentifier: CardCollectionCell.reuseIdentifier)
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,6 +94,8 @@ private extension MainViewController {
         
         moneyStackView.addArrangedSubview(moneyLabel)
         moneyStackView.addArrangedSubview(searchButton)
+        
+        view.addSubview(cardsCollectionView)
     }
     
     func setupLayout() {
@@ -91,7 +107,35 @@ private extension MainViewController {
         searchButton.snp.makeConstraints { make in
             make.size.equalTo(32)
         }
+        
+        cardsCollectionView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview()
+            make.top.equalTo(balanceStackView.snp.bottom).offset(24)
+            make.height.equalTo(170)
+        }
     }
+}
+extension MainViewController: UICollectionViewDelegate {}
+
+extension MainViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        cards.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionCell.reuseIdentifier, for: indexPath) as? CardCollectionCell else {
+            return CardCollectionCell()
+        }
+        let currentCard = cards[indexPath.row]
+        cell.setupData(with: currentCard)
+        return cell
+    }
+}
+
+private enum Const {
+    static let cardLineSpacing: CGFloat = 13
+    static let cardSize = CGSize(width: 148, height: 170)
 }
 
 #Preview(traits: .defaultLayout, body: {
