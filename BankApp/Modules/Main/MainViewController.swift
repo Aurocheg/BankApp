@@ -12,6 +12,8 @@ import SnapKit
 class MainViewController: UIViewController {
     private let cards: [Card] = Card.generateCards()
     
+    private let categories: [Category] = Category.generateCategory()
+    
     private let leftBarButtonItem = {
         let view = UIImageView()
         view.image = UIImage(named: "avatar")
@@ -37,7 +39,7 @@ class MainViewController: UIViewController {
         let label = UILabel()
         label.text = "Your balance"
         label.font = .Text.xsmall
-        label.textColor = .white
+        label.textColor = .Text.light
         return label
     }()
     
@@ -51,7 +53,7 @@ class MainViewController: UIViewController {
         let label = UILabel()
         label.text = "$ 7.896"
         label.font = .Title.h1
-        label.textColor = .white
+        label.textColor = .Text.light
         return label
     }()
     
@@ -60,6 +62,14 @@ class MainViewController: UIViewController {
         let image = UIImage(named: "search")
         button.setImage(image, for: .normal)
         return button
+    }()
+    
+    private let titleCategory = {
+        let label = UILabel()
+        label.text = "FINANCE"
+        label.font = .Title.h4
+        label.textColor = .Text.light
+        return label
     }()
     
     private lazy var cardsCollectionView = {
@@ -72,6 +82,19 @@ class MainViewController: UIViewController {
         view.delegate = self
         view.dataSource = self
         view.register(CardCollectionCell.self, forCellWithReuseIdentifier: CardCollectionCell.reuseIdentifier)
+        return view
+    }()
+    
+    private lazy var categoryCollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = Const.cardLineSpacing
+        layout.itemSize = Const.categorySize
+        layout.scrollDirection = .horizontal
+        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.showsHorizontalScrollIndicator = false
+        view.delegate = self
+        view.dataSource = self
+        view.register(CategoryCollectionCell.self, forCellWithReuseIdentifier: CategoryCollectionCell.reuseIdentifier)
         return view
     }()
     
@@ -95,7 +118,10 @@ private extension MainViewController {
         moneyStackView.addArrangedSubview(moneyLabel)
         moneyStackView.addArrangedSubview(searchButton)
         
+        view.addSubview(titleCategory)
+        
         view.addSubview(cardsCollectionView)
+        view.addSubview(categoryCollectionView)
     }
     
     func setupLayout() {
@@ -114,28 +140,60 @@ private extension MainViewController {
             make.top.equalTo(balanceStackView.snp.bottom).offset(24)
             make.height.equalTo(170)
         }
+        
+        titleCategory.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalTo(cardsCollectionView.snp.bottom).offset(40)
+        }
+        
+        categoryCollectionView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview()
+            make.top.equalTo(titleCategory.snp.bottom).offset(12)
+            make.height.equalTo(100)
+        }
     }
 }
 extension MainViewController: UICollectionViewDelegate {}
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        cards.count
+        if collectionView == cardsCollectionView {
+            return cards.count
+        } else if collectionView == categoryCollectionView {
+            return categories.count
+        }
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionCell.reuseIdentifier, for: indexPath) as? CardCollectionCell else {
-            return CardCollectionCell()
+        if collectionView == cardsCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionCell.reuseIdentifier, for: indexPath) as? CardCollectionCell else {
+                return CardCollectionCell()
+            }
+            let currentCard = cards[indexPath.row]
+            cell.setupData(with: currentCard)
+            return cell
+        } else if collectionView == categoryCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionCell.reuseIdentifier, for: indexPath) as? CategoryCollectionCell else {
+                return CategoryCollectionCell()
+            }
+            let currentCategory = categories[indexPath.row]
+            cell.setupData(with: currentCategory)
+            return cell
         }
-        let currentCard = cards[indexPath.row]
-        cell.setupData(with: currentCard)
-        return cell
+        return UICollectionViewCell()
     }
 }
 
+
+
 private enum Const {
-    static let cardLineSpacing: CGFloat = 13
+    static let cardLineSpacing: CGFloat = 14
     static let cardSize = CGSize(width: 148, height: 170)
+    
+    static let categoryLineSpacing: CGFloat = 14
+    static let categorySize = CGSize(width: 100, height: 100)
 }
 
 #Preview(traits: .defaultLayout, body: {

@@ -15,7 +15,12 @@ extension UIColor {
         static let lilac = UIColor(red: 0.664, green: 0.617, blue: 0.714, alpha: 1)
     }
     
+    enum Category {
+        static let gray = UIColor(named: "grayColor")
+    }
+    
     enum Text {
         static let dark = UIColor(red: 39/256, green: 42/256, blue: 50/256, alpha: 1)
+        static let light = UIColor.white
     }
 }
