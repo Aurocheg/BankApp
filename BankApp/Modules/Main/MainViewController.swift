@@ -10,6 +10,15 @@ import UIKit
 import SnapKit
 
 class MainViewController: UIViewController {
+    private lazy var scrollView : UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = UIColor.black
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
+    }()
+    
+    private let contentView = UIView()
+    
     private let cards: [Card] = Card.generateCards()
     
     private let categories: [Category] = Category.generateCategory()
@@ -234,13 +243,6 @@ class MainViewController: UIViewController {
         return label
     }()
     
-    private let currenciesAndMetalsBackground = {
-        let view = UIView()
-        view.backgroundColor = .black
-        view.layer.cornerRadius = Const.blocksCornerRadius
-        return view
-    }()
-    
     private let currenciesAndMetalsButton = {
         let button = UIButton()
         let image = UIImage(named: "chevronLeft")
@@ -248,106 +250,29 @@ class MainViewController: UIViewController {
         return button
     }()
     
-    private let currencieLabel = {
-        let label = UILabel()
-        label.text = "Currencie"
-        label.font = .Text.xxsmall
-        label.textColor = .gray
-        return label
-    }()
+    private let currencies = CurrenciesAndMetalsView(with: CurrenciesAndMetals(
+        currenciesLabel: "Currencie",
+        itemOne: "USD",
+        itemOneBuy: "$ 78,92",
+        itemOneSell: "$ 78,92",
+        itemOneImage: UIImage(named: "dollar"),
+        itemTwo: "EUR",
+        itemTwoBuy: "$ 78,92",
+        itemTwoSell: "$ 78,92",
+        itemTwoImage: UIImage(named: "euro")
+    ))
     
-    private let buyLabel = {
-        let label = UILabel()
-        label.text = "Buy"
-        label.font = .Text.xxsmall
-        label.textColor = .gray
-        return label
-    }()
-    
-    private let sellLabel = {
-        let label = UILabel()
-        label.text = "Sell"
-        label.font = .Text.xxsmall
-        label.textColor = .gray
-        return label
-    }()
-    
-    private let currenciesIconDollarView = {
-        let view = UIView()
-        view.backgroundColor = .Accent.mint
-        view.layer.cornerRadius = 7
-        return view
-    }()
-    
-    private let currenciesLogoDollarView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "dollar")
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-    
-    private let currenciesIconEuroView = {
-        let view = UIView()
-        view.backgroundColor = .Accent.mint
-        view.layer.cornerRadius = 7
-        return view
-    }()
-    
-    private let currenciesLogoEuroView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "euro")
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-    
-    private let currenciesDollarLabel = {
-        let label = UILabel()
-        label.text = "USD"
-        label.font = .Text.regular
-        label.textColor = .Text.light
-        return label
-    }()
-    
-    private let currenciesEuroLabel = {
-        let label = UILabel()
-        label.text = "EUR"
-        label.font = .Text.regular
-        label.textColor = .Text.light
-        return label
-    }()
-    
-    private let currenciesBuyUSD = {
-        let label = UILabel()
-        label.text = "$ 78,92"
-        label.font = .Text.regular
-        label.textColor = .Text.light
-        return label
-    }()
-    
-    private let currenciesSellUSD = {
-        let label = UILabel()
-        label.text = "$ 78,92"
-        label.font = .Text.regular
-        label.textColor = .Text.light
-        return label
-    }()
-    
-    private let currenciesBuyEUR = {
-        let label = UILabel()
-        label.text = "$ 78,92"
-        label.font = .Text.regular
-        label.textColor = .Text.light
-        return label
-    }()
-    
-    private let currenciesSellEUR = {
-        let label = UILabel()
-        label.text = "$ 78,92"
-        label.font = .Text.regular
-        label.textColor = .Text.light
-        return label
-    }()
-    
+    private let metals = CurrenciesAndMetalsView(with: CurrenciesAndMetals(
+        currenciesLabel: "Metals",
+        itemOne: "Gold",
+        itemOneBuy: "$ 78,92",
+        itemOneSell: "$ 78,92",
+        itemOneImage: UIImage(named: "metalsIcon"),
+        itemTwo: "Silver",
+        itemTwoBuy: "$ 78,92",
+        itemTwoSell: "$ 78,92",
+        itemTwoImage: UIImage(named: "metalsIcon")
+    ))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -359,22 +284,25 @@ class MainViewController: UIViewController {
 
 private extension MainViewController {
     func setupUI() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
         navigationItem.leftBarButtonItem = leftBarButtonItem
         navigationItem.titleView = titleView
         
-        view.addSubview(balanceStackView)
+        contentView.addSubview(balanceStackView)
         balanceStackView.addArrangedSubview(balanceLabel)
         balanceStackView.addArrangedSubview(moneyStackView)
         
         moneyStackView.addArrangedSubview(moneyLabel)
         moneyStackView.addArrangedSubview(searchButton)
         
-        view.addSubview(titleCategory)
+        contentView.addSubview(titleCategory)
         
-        view.addSubview(cardsCollectionView)
-        view.addSubview(categoryCollectionView)
+        contentView.addSubview(cardsCollectionView)
+        contentView.addSubview(categoryCollectionView)
         
-        view.addSubview(backgroundBlocksStack)
+        contentView.addSubview(backgroundBlocksStack)
         backgroundBlocksStack.addSubview(loansArrowButton)
         backgroundBlocksStack.addSubview(loansLabel)
         backgroundBlocksStack.addSubview(loansPlusButton)
@@ -394,29 +322,28 @@ private extension MainViewController {
         bannerBackground.addSubview(disctiprionLabelBanner)
         bannerBackground.addSubview(exitButtonBanner)
         
-        backgroundBlocksStack.addSubview(currenciesAndMetalsBackground)
         backgroundBlocksStack.addSubview(currenciesAndMetalsButton)
         backgroundBlocksStack.addSubview(currenciesAndMetalsLabel)
-        
-        currenciesAndMetalsBackground.addSubview(currencieLabel)
-        currenciesAndMetalsBackground.addSubview(buyLabel)
-        currenciesAndMetalsBackground.addSubview(sellLabel)
-        currenciesAndMetalsBackground.addSubview(currenciesIconEuroView)
-        currenciesIconEuroView.addSubview(currenciesLogoEuroView)
-        currenciesAndMetalsBackground.addSubview(currenciesIconDollarView)
-        currenciesIconDollarView.addSubview(currenciesLogoDollarView)
-        currenciesAndMetalsBackground.addSubview(currenciesDollarLabel)
-        currenciesAndMetalsBackground.addSubview(currenciesEuroLabel)
-        currenciesAndMetalsBackground.addSubview(currenciesBuyUSD)
-        currenciesAndMetalsBackground.addSubview(currenciesSellUSD)
-        currenciesAndMetalsBackground.addSubview(currenciesBuyEUR)
-        currenciesAndMetalsBackground.addSubview(currenciesSellEUR)
+        backgroundBlocksStack.addSubview(currencies)
+        backgroundBlocksStack.addSubview(metals)
     }
     
     func setupLayout() {
+        scrollView.snp.makeConstraints { (make) in
+            make.edges.equalTo(view)
+        }
+        
+        contentView.snp.makeConstraints { make in
+            make.top.bottom.equalTo(scrollView)
+            make.left.right.equalTo(scrollView)
+            make.width.equalTo(scrollView)
+            make.bottom.equalTo(scrollView.snp.bottom)
+        }
+        
         balanceStackView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(32)
-            make.horizontalEdges.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(24)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
         searchButton.snp.makeConstraints { make in
@@ -443,109 +370,26 @@ private extension MainViewController {
         }
         
         backgroundBlocksStack.snp.makeConstraints { make in
-            make.size.equalTo(Const.blocksBackgroudSize)
             make.top.equalTo(categoryCollectionView.snp.bottom).offset(36)
-        }
-        
-        currenciesAndMetalsButton.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(20)
-            make.top.equalToSuperview().inset(26)
-            make.width.height.equalTo(20)
-        }
-        
-        currenciesAndMetalsLabel.snp.makeConstraints { make in
-            make.leading.equalTo(currenciesAndMetalsButton.snp.trailing).offset(8)
-            make.top.equalToSuperview().inset(26)
-        }
-        
-        currenciesAndMetalsBackground.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(20)
-            make.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(currenciesAndMetalsButton.snp.bottom).offset(16)
-            make.size.equalTo(Const.currenciesAndMetalsSize)
-        }
-        
-        currencieLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(20)
-            make.leading.equalToSuperview().inset(20)
-        }
-        
-        buyLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(20)
-            make.trailing.equalToSuperview().inset(100)
-        }
-        
-        sellLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(20)
-            make.trailing.equalToSuperview().inset(20)
-        }
-        
-        currenciesIconDollarView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(20)
-            make.top.equalTo(currencieLabel.snp.bottom).offset(12)
-            make.size.equalTo(Const.currenciesIcon)
-        }
-        
-        currenciesLogoDollarView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.size.equalTo(Const.currenciesLogo)
-        }
-        
-        currenciesIconEuroView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(20)
-            make.top.equalTo(currenciesIconDollarView.snp.bottom).offset(8)
-            make.size.equalTo(Const.currenciesIcon)
-        }
-        
-        currenciesLogoEuroView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.size.equalTo(Const.currenciesLogo)
-        }
-        
-        currenciesDollarLabel.snp.makeConstraints { make in
-            make.leading.equalTo(currenciesIconDollarView.snp.trailing).offset(12)
-            make.top.equalTo(currencieLabel.snp.bottom).offset(12)
-        }
-        
-        currenciesEuroLabel.snp.makeConstraints { make in
-            make.leading.equalTo(currenciesIconEuroView.snp.trailing).offset(12)
-            make.top.equalTo(currenciesDollarLabel.snp.bottom).offset(12)
-        }
-        
-        currenciesBuyUSD.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(100)
-            make.top.equalTo(sellLabel.snp.bottom).offset(12)
-        }
-        
-        currenciesSellUSD.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(buyLabel.snp.bottom).offset(12)
-        }
-        
-        currenciesBuyEUR.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(100)
-            make.top.equalTo(currenciesBuyUSD.snp.bottom).offset(12)
-        }
-        
-        currenciesSellEUR.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(currenciesSellUSD.snp.bottom).offset(12)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(20)
         }
         
         loansArrowButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(20)
-            make.top.equalTo(currenciesAndMetalsBackground.snp.bottom).offset(26)
+            make.top.equalToSuperview().inset(26)
             make.width.height.equalTo(20)
         }
         
         loansLabel.snp.makeConstraints { make in
             make.leading.equalTo(loansArrowButton.snp.trailing).offset(8)
-            make.top.equalTo(currenciesAndMetalsBackground.snp.bottom).offset(30)
+            make.top.equalToSuperview().offset(30)
         }
         
         loansPlusButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(20)
-            make.top.equalTo(currenciesAndMetalsBackground.snp.bottom).offset(26)
+            make.top.equalToSuperview().offset(26)
             make.width.height.equalTo(20)
         }
         
@@ -620,8 +464,34 @@ private extension MainViewController {
             make.trailing.equalToSuperview().inset(20)
             make.size.equalTo(Const.exitButtonSize)
         }
+        
+        currenciesAndMetalsButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalTo(bannerBackground.snp.bottom).offset(26)
+            make.width.height.equalTo(20)
+        }
+        
+        currenciesAndMetalsLabel.snp.makeConstraints { make in
+            make.leading.equalTo(currenciesAndMetalsButton.snp.trailing).offset(8)
+            make.top.equalTo(bannerBackground.snp.bottom).offset(30)
+        }
+        
+        currencies.snp.makeConstraints { make in
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.top.equalTo(currenciesAndMetalsLabel.snp.bottom).offset(16)
+            make.size.equalTo(Const.currenciesAndMetalsSize)
+        }
+        
+        metals.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(currencies.snp.bottom).offset(16)
+            make.bottom.equalToSuperview().inset(30)
+            make.size.equalTo(Const.currenciesAndMetalsSize)
+        }
     }
 }
+
 extension MainViewController: UICollectionViewDelegate {}
 
 extension MainViewController: UICollectionViewDataSource {

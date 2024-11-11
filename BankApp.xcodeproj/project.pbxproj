@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		712956A22CE2809600B4E074 /* CurrenciesAndMetals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712956A12CE2809600B4E074 /* CurrenciesAndMetals.swift */; };
+		712956A42CE2817500B4E074 /* CurrenciesAndMetalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712956A32CE2817500B4E074 /* CurrenciesAndMetalsView.swift */; };
 		71754D2C2CE0E276000FFF37 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D2B2CE0E276000FFF37 /* UIFont+.swift */; };
 		71754D2E2CE0E41D000FFF37 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D2D2CE0E41D000FFF37 /* UIColor+.swift */; };
 		71754D322CE0E58B000FFF37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D312CE0E58B000FFF37 /* MainViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		712956A12CE2809600B4E074 /* CurrenciesAndMetals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesAndMetals.swift; sourceTree = "<group>"; };
+		712956A32CE2817500B4E074 /* CurrenciesAndMetalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesAndMetalsView.swift; sourceTree = "<group>"; };
 		71754D2B2CE0E276000FFF37 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		71754D2D2CE0E41D000FFF37 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		71754D312CE0E58B000FFF37 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				71754D3F2CE0F85B000FFF37 /* CardCollectionCell.swift */,
+				712956A32CE2817500B4E074 /* CurrenciesAndMetalsView.swift */,
 				71754D462CE104A9000FFF37 /* CategoryCollectionCell.swift */,
 			);
 			path = Cells;
@@ -102,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				71754D422CE0FA0F000FFF37 /* Card.swift */,
+				712956A12CE2809600B4E074 /* CurrenciesAndMetals.swift */,
 				71754D442CE102D6000FFF37 /* Category.swift */,
 			);
 			path = Data;
@@ -219,9 +225,11 @@
 			files = (
 				71754D472CE104A9000FFF37 /* CategoryCollectionCell.swift in Sources */,
 				71754D2C2CE0E276000FFF37 /* UIFont+.swift in Sources */,
+				712956A22CE2809600B4E074 /* CurrenciesAndMetals.swift in Sources */,
 				71754D402CE0F85B000FFF37 /* CardCollectionCell.swift in Sources */,
 				71754D432CE0FA0F000FFF37 /* Card.swift in Sources */,
 				DEE63A672CDF3689002E0F55 /* AppDelegate.swift in Sources */,
+				712956A42CE2817500B4E074 /* CurrenciesAndMetalsView.swift in Sources */,
 				DEE63A692CDF3689002E0F55 /* SceneDelegate.swift in Sources */,
 				71754D2E2CE0E41D000FFF37 /* UIColor+.swift in Sources */,
 				71754D322CE0E58B000FFF37 /* MainViewController.swift in Sources */,
