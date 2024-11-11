@@ -341,9 +341,8 @@ private extension MainViewController {
         }
         
         balanceStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(24)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.top.equalToSuperview().inset(32)
+            make.horizontalEdges.equalToSuperview().inset(20)
         }
         
         searchButton.snp.makeConstraints { make in
