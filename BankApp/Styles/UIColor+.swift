@@ -19,6 +19,12 @@ extension UIColor {
         static let gray = UIColor(named: "grayColor")
     }
     
+    enum Blocks {
+        static let gray = UIColor(named: "grayColor")
+        static let plusButtonBackground = UIColor(named: "plusButtonBackground")
+        static let bunnerColor = UIColor(named: "bannerColor")
+    }
+    
     enum Text {
         static let dark = UIColor(red: 39/256, green: 42/256, blue: 50/256, alpha: 1)
         static let light = UIColor.white

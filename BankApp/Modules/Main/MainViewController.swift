@@ -67,7 +67,7 @@ class MainViewController: UIViewController {
     private let titleCategory = {
         let label = UILabel()
         label.text = "FINANCE"
-        label.font = .Title.h4
+        label.font = .Text.xxsmall
         label.textColor = .Text.light
         return label
     }()
@@ -98,6 +98,81 @@ class MainViewController: UIViewController {
         return view
     }()
     
+    private var backgroundBlocksStack = {
+        let view = UIView()
+        view.backgroundColor = .Blocks.gray
+        view.layer.cornerRadius = Const.blocksCornerRadius
+        return view
+    }()
+    
+    private var loansLabel = {
+        let label = UILabel()
+        label.text = "CURRENT LOANS"
+        label.font = .Text.xxsmall
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    private var loansArrowButton = {
+        let button = UIButton()
+        let image = UIImage(named: "chevronLeft")
+        button.setImage(image, for: .normal)
+        return button
+    }()
+    
+    private var loansPlusButton = {
+        let button = UIButton()
+        let image = UIImage(named: "plus")
+        button.setImage(image, for: .normal)
+        button.backgroundColor = .Blocks.plusButtonBackground
+        button.layer.cornerRadius = 10
+        return button
+    }()
+    
+    private var bannerBackground = {
+        let view = UIView()
+        view.backgroundColor = .Blocks.bunnerColor
+        view.layer.cornerRadius = Const.blocksCornerRadius
+        return view
+    }()
+    
+    private let iconView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.layer.cornerRadius = Const.iconCornerRadius
+        return view
+    }()
+    
+    private let iconImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "logoBanner")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let titleLabelBanner = {
+        let label = UILabel()
+        label.text = "Start investing now!"
+        label.font = .Text.medium
+        label.textColor = .Text.dark
+        return label
+    }()
+    
+    private let disctiprionLabelBanner = {
+        let label = UILabel()
+        label.text = "Protected savings and investment plans"
+        label.font = .Text.xxsmall
+        label.textColor = .Text.dark
+        return label
+    }()
+    
+    private let exitButtonBanner = {
+        let view = UIImageView()
+        view.image = UIImage(named: "exitButton")
+        view.contentMode = .scaleToFill
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -122,6 +197,17 @@ private extension MainViewController {
         
         view.addSubview(cardsCollectionView)
         view.addSubview(categoryCollectionView)
+        
+        view.addSubview(backgroundBlocksStack)
+        backgroundBlocksStack.addSubview(loansArrowButton)
+        backgroundBlocksStack.addSubview(loansLabel)
+        backgroundBlocksStack.addSubview(loansPlusButton)
+        backgroundBlocksStack.addSubview(bannerBackground)
+        bannerBackground.addSubview(iconView)
+        iconView.addSubview(iconImageView)
+        bannerBackground.addSubview(titleLabelBanner)
+        bannerBackground.addSubview(disctiprionLabelBanner)
+        bannerBackground.addSubview(exitButtonBanner)
     }
     
     func setupLayout() {
@@ -151,6 +237,62 @@ private extension MainViewController {
             make.trailing.equalToSuperview()
             make.top.equalTo(titleCategory.snp.bottom).offset(12)
             make.height.equalTo(100)
+        }
+        
+        backgroundBlocksStack.snp.makeConstraints { make in
+            make.size.equalTo(Const.blocksBackgroudSize)
+            make.top.equalTo(categoryCollectionView.snp.bottom).offset(36)
+        }
+        
+        loansArrowButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(26)
+            make.width.height.equalTo(20)
+        }
+        
+        loansLabel.snp.makeConstraints { make in
+            make.leading.equalTo(loansArrowButton.snp.trailing).offset(8)
+            make.top.equalToSuperview().inset(30)
+        }
+        
+        loansPlusButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(26)
+            make.width.height.equalTo(20)
+        }
+        
+        bannerBackground.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(loansLabel.snp.bottom).offset(16)
+            make.size.equalTo(Const.bannerSize)
+        }
+        
+        iconView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(22)
+            make.size.equalTo(Const.iconBannerSize)
+        }
+        
+        iconImageView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 20, height: 20))
+            make.center.equalToSuperview()
+        }
+        
+        titleLabelBanner.snp.makeConstraints { make in
+            make.leading.equalTo(iconView.snp.trailing).offset(8)
+            make.top.equalToSuperview().inset(22)
+        }
+        
+        disctiprionLabelBanner.snp.makeConstraints { make in
+            make.leading.equalTo(iconView.snp.trailing).offset(8)
+            make.top.equalTo(titleLabelBanner.snp.bottom)
+        }
+        
+        exitButtonBanner.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(16)
+            make.trailing.equalToSuperview().inset(20)
+            make.size.equalTo(Const.exitButtonSize)
         }
     }
 }
@@ -194,6 +336,14 @@ private enum Const {
     
     static let categoryLineSpacing: CGFloat = 14
     static let categorySize = CGSize(width: 100, height: 100)
+    
+    static let blocksBackgroudSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
+    static let blocksCornerRadius: CGFloat = 30
+    
+    static let bannerSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 76)
+    static let iconBannerSize: CGSize = CGSize(width: 32, height: 32)
+    static let iconCornerRadius: CGFloat = 10
+    static let exitButtonSize: CGSize = CGSize(width: 16, height: 16)
 }
 
 #Preview(traits: .defaultLayout, body: {
