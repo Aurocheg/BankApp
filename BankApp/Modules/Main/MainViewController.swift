@@ -129,6 +129,59 @@ class MainViewController: UIViewController {
         return button
     }()
     
+    private var operationBackground = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.layer.cornerRadius = Const.blocksCornerRadius
+        return view
+    }()
+    
+    private let iconOperationView = {
+        let view = UIView()
+        view.backgroundColor = .Accent.mint
+        view.layer.cornerRadius = Const.iconCornerRadius
+        return view
+    }()
+    
+    private let iconOperationImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "operationIcon")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let numberOperationLabel = {
+        let label = UILabel()
+        label.text = "Account № 3874825"
+        label.font = .Text.regular
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    private let dateOperationLabel = {
+        let label = UILabel()
+        label.text = "Expires 12/22/2023"
+        label.font = .Text.xxsmall
+        label.textColor = .gray
+        return label
+    }()
+    
+    private let sumOperationLabel = {
+        let label = UILabel()
+        label.text = "$ 78,92"
+        label.font = .Text.regular
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    private let rateCreditOperationLabel = {
+        let label = UILabel()
+        label.text = "Rate 3.5%"
+        label.font = .Text.xxsmall
+        label.textColor = .gray
+        return label
+    }()
+    
     private var bannerBackground = {
         let view = UIView()
         view.backgroundColor = .Blocks.bunnerColor
@@ -202,12 +255,22 @@ private extension MainViewController {
         backgroundBlocksStack.addSubview(loansArrowButton)
         backgroundBlocksStack.addSubview(loansLabel)
         backgroundBlocksStack.addSubview(loansPlusButton)
+        
+        backgroundBlocksStack.addSubview(operationBackground)
+        operationBackground.addSubview(iconOperationView)
+        iconOperationView.addSubview(iconOperationImageView)
+        operationBackground.addSubview(numberOperationLabel)
+        operationBackground.addSubview(dateOperationLabel)
+        operationBackground.addSubview(sumOperationLabel)
+        operationBackground.addSubview(rateCreditOperationLabel)
+        
         backgroundBlocksStack.addSubview(bannerBackground)
         bannerBackground.addSubview(iconView)
         iconView.addSubview(iconImageView)
         bannerBackground.addSubview(titleLabelBanner)
         bannerBackground.addSubview(disctiprionLabelBanner)
         bannerBackground.addSubview(exitButtonBanner)
+        
     }
     
     func setupLayout() {
@@ -261,10 +324,48 @@ private extension MainViewController {
             make.width.height.equalTo(20)
         }
         
-        bannerBackground.snp.makeConstraints { make in
+        operationBackground.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(20)
             make.trailing.equalToSuperview().inset(20)
             make.top.equalTo(loansLabel.snp.bottom).offset(16)
+            make.size.equalTo(Const.opetationSize)
+        }
+        
+        iconOperationView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalToSuperview().inset(22)
+            make.size.equalTo(Const.operationIconSize)
+        }
+        
+        iconOperationImageView.snp.makeConstraints { make in
+            make.size.equalTo(CGSize(width: 20, height: 20))
+            make.center.equalToSuperview()
+        }
+        
+        numberOperationLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(22)
+            make.leading.equalTo(iconOperationView.snp.trailing).offset(8)
+        }
+        
+        dateOperationLabel.snp.makeConstraints { make in
+            make.top.equalTo(numberOperationLabel.snp.bottom).offset(2)
+            make.leading.equalTo(iconOperationView.snp.trailing).offset(8)
+        }
+        
+        sumOperationLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(22)
+            make.trailing.equalToSuperview().inset(20)
+        }
+        
+        rateCreditOperationLabel.snp.makeConstraints { make in
+            make.top.equalTo(sumOperationLabel.snp.bottom).offset(2)
+            make.trailing.equalToSuperview().inset(20)
+        }
+        
+        bannerBackground.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(operationBackground.snp.bottom).offset(16)
             make.size.equalTo(Const.bannerSize)
         }
         
@@ -337,8 +438,11 @@ private enum Const {
     static let categoryLineSpacing: CGFloat = 14
     static let categorySize = CGSize(width: 100, height: 100)
     
-    static let blocksBackgroudSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
+    static let blocksBackgroudSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 300)
     static let blocksCornerRadius: CGFloat = 30
+    
+    static let opetationSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 76)
+    static let operationIconSize: CGSize = CGSize(width: 32, height: 32)
     
     static let bannerSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 76)
     static let iconBannerSize: CGSize = CGSize(width: 32, height: 32)
