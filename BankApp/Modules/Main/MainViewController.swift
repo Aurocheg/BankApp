@@ -226,6 +226,129 @@ class MainViewController: UIViewController {
         return view
     }()
     
+    private let currenciesAndMetalsLabel = {
+        let label = UILabel()
+        label.text = "Currencies and metals".uppercased()
+        label.font = .Text.xxsmall
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    private let currenciesAndMetalsBackground = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.layer.cornerRadius = Const.blocksCornerRadius
+        return view
+    }()
+    
+    private let currenciesAndMetalsButton = {
+        let button = UIButton()
+        let image = UIImage(named: "chevronLeft")
+        button.setImage(image, for: .normal)
+        return button
+    }()
+    
+    private let currencieLabel = {
+        let label = UILabel()
+        label.text = "Currencie"
+        label.font = .Text.xxsmall
+        label.textColor = .gray
+        return label
+    }()
+    
+    private let buyLabel = {
+        let label = UILabel()
+        label.text = "Buy"
+        label.font = .Text.xxsmall
+        label.textColor = .gray
+        return label
+    }()
+    
+    private let sellLabel = {
+        let label = UILabel()
+        label.text = "Sell"
+        label.font = .Text.xxsmall
+        label.textColor = .gray
+        return label
+    }()
+    
+    private let currenciesIconDollarView = {
+        let view = UIView()
+        view.backgroundColor = .Accent.mint
+        view.layer.cornerRadius = 7
+        return view
+    }()
+    
+    private let currenciesLogoDollarView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "dollar")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let currenciesIconEuroView = {
+        let view = UIView()
+        view.backgroundColor = .Accent.mint
+        view.layer.cornerRadius = 7
+        return view
+    }()
+    
+    private let currenciesLogoEuroView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "euro")
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    private let currenciesDollarLabel = {
+        let label = UILabel()
+        label.text = "USD"
+        label.font = .Text.regular
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    private let currenciesEuroLabel = {
+        let label = UILabel()
+        label.text = "EUR"
+        label.font = .Text.regular
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    private let currenciesBuyUSD = {
+        let label = UILabel()
+        label.text = "$ 78,92"
+        label.font = .Text.regular
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    private let currenciesSellUSD = {
+        let label = UILabel()
+        label.text = "$ 78,92"
+        label.font = .Text.regular
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    private let currenciesBuyEUR = {
+        let label = UILabel()
+        label.text = "$ 78,92"
+        label.font = .Text.regular
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    private let currenciesSellEUR = {
+        let label = UILabel()
+        label.text = "$ 78,92"
+        label.font = .Text.regular
+        label.textColor = .Text.light
+        return label
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -271,6 +394,23 @@ private extension MainViewController {
         bannerBackground.addSubview(disctiprionLabelBanner)
         bannerBackground.addSubview(exitButtonBanner)
         
+        backgroundBlocksStack.addSubview(currenciesAndMetalsBackground)
+        backgroundBlocksStack.addSubview(currenciesAndMetalsButton)
+        backgroundBlocksStack.addSubview(currenciesAndMetalsLabel)
+        
+        currenciesAndMetalsBackground.addSubview(currencieLabel)
+        currenciesAndMetalsBackground.addSubview(buyLabel)
+        currenciesAndMetalsBackground.addSubview(sellLabel)
+        currenciesAndMetalsBackground.addSubview(currenciesIconEuroView)
+        currenciesIconEuroView.addSubview(currenciesLogoEuroView)
+        currenciesAndMetalsBackground.addSubview(currenciesIconDollarView)
+        currenciesIconDollarView.addSubview(currenciesLogoDollarView)
+        currenciesAndMetalsBackground.addSubview(currenciesDollarLabel)
+        currenciesAndMetalsBackground.addSubview(currenciesEuroLabel)
+        currenciesAndMetalsBackground.addSubview(currenciesBuyUSD)
+        currenciesAndMetalsBackground.addSubview(currenciesSellUSD)
+        currenciesAndMetalsBackground.addSubview(currenciesBuyEUR)
+        currenciesAndMetalsBackground.addSubview(currenciesSellEUR)
     }
     
     func setupLayout() {
@@ -307,20 +447,105 @@ private extension MainViewController {
             make.top.equalTo(categoryCollectionView.snp.bottom).offset(36)
         }
         
-        loansArrowButton.snp.makeConstraints { make in
+        currenciesAndMetalsButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(20)
             make.top.equalToSuperview().inset(26)
             make.width.height.equalTo(20)
         }
         
+        currenciesAndMetalsLabel.snp.makeConstraints { make in
+            make.leading.equalTo(currenciesAndMetalsButton.snp.trailing).offset(8)
+            make.top.equalToSuperview().inset(26)
+        }
+        
+        currenciesAndMetalsBackground.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(currenciesAndMetalsButton.snp.bottom).offset(16)
+            make.size.equalTo(Const.currenciesAndMetalsSize)
+        }
+        
+        currencieLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(20)
+            make.leading.equalToSuperview().inset(20)
+        }
+        
+        buyLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(100)
+        }
+        
+        sellLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().inset(20)
+        }
+        
+        currenciesIconDollarView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalTo(currencieLabel.snp.bottom).offset(12)
+            make.size.equalTo(Const.currenciesIcon)
+        }
+        
+        currenciesLogoDollarView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(Const.currenciesLogo)
+        }
+        
+        currenciesIconEuroView.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalTo(currenciesIconDollarView.snp.bottom).offset(8)
+            make.size.equalTo(Const.currenciesIcon)
+        }
+        
+        currenciesLogoEuroView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.size.equalTo(Const.currenciesLogo)
+        }
+        
+        currenciesDollarLabel.snp.makeConstraints { make in
+            make.leading.equalTo(currenciesIconDollarView.snp.trailing).offset(12)
+            make.top.equalTo(currencieLabel.snp.bottom).offset(12)
+        }
+        
+        currenciesEuroLabel.snp.makeConstraints { make in
+            make.leading.equalTo(currenciesIconEuroView.snp.trailing).offset(12)
+            make.top.equalTo(currenciesDollarLabel.snp.bottom).offset(12)
+        }
+        
+        currenciesBuyUSD.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(100)
+            make.top.equalTo(sellLabel.snp.bottom).offset(12)
+        }
+        
+        currenciesSellUSD.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(buyLabel.snp.bottom).offset(12)
+        }
+        
+        currenciesBuyEUR.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(100)
+            make.top.equalTo(currenciesBuyUSD.snp.bottom).offset(12)
+        }
+        
+        currenciesSellEUR.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().inset(20)
+            make.top.equalTo(currenciesSellUSD.snp.bottom).offset(12)
+        }
+        
+        loansArrowButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().inset(20)
+            make.top.equalTo(currenciesAndMetalsBackground.snp.bottom).offset(26)
+            make.width.height.equalTo(20)
+        }
+        
         loansLabel.snp.makeConstraints { make in
             make.leading.equalTo(loansArrowButton.snp.trailing).offset(8)
-            make.top.equalToSuperview().inset(30)
+            make.top.equalTo(currenciesAndMetalsBackground.snp.bottom).offset(30)
         }
         
         loansPlusButton.snp.makeConstraints { make in
             make.trailing.equalToSuperview().inset(20)
-            make.top.equalToSuperview().inset(26)
+            make.top.equalTo(currenciesAndMetalsBackground.snp.bottom).offset(26)
             make.width.height.equalTo(20)
         }
         
@@ -448,6 +673,10 @@ private enum Const {
     static let iconBannerSize: CGSize = CGSize(width: 32, height: 32)
     static let iconCornerRadius: CGFloat = 10
     static let exitButtonSize: CGSize = CGSize(width: 16, height: 16)
+    
+    static let currenciesAndMetalsSize: CGSize = CGSize(width: UIScreen.main.bounds.width, height: 116)
+    static let currenciesLogo: CGSize = CGSize(width: 10, height: 10)
+    static let currenciesIcon: CGSize = CGSize(width: 20, height: 20)
 }
 
 #Preview(traits: .defaultLayout, body: {
