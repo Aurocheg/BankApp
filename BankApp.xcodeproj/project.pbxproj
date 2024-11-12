@@ -7,20 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		712956A22CE2809600B4E074 /* CurrenciesAndMetals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712956A12CE2809600B4E074 /* CurrenciesAndMetals.swift */; };
+		712956A42CE2817500B4E074 /* CurrenciesAndMetalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712956A32CE2817500B4E074 /* CurrenciesAndMetalsView.swift */; };
+		71754D2C2CE0E276000FFF37 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D2B2CE0E276000FFF37 /* UIFont+.swift */; };
+		71754D2E2CE0E41D000FFF37 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D2D2CE0E41D000FFF37 /* UIColor+.swift */; };
+		71754D322CE0E58B000FFF37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D312CE0E58B000FFF37 /* MainViewController.swift */; };
+		71754D352CE0E69E000FFF37 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71754D342CE0E69E000FFF37 /* SnapKit */; };
+		71754D392CE0EE49000FFF37 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 71754D382CE0EE49000FFF37 /* SnapKit */; };
+		71754D402CE0F85B000FFF37 /* CardCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D3F2CE0F85B000FFF37 /* CardCollectionCell.swift */; };
+		71754D432CE0FA0F000FFF37 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D422CE0FA0F000FFF37 /* Card.swift */; };
+		71754D452CE102D6000FFF37 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D442CE102D6000FFF37 /* Category.swift */; };
+		71754D472CE104A9000FFF37 /* CategoryCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D462CE104A9000FFF37 /* CategoryCollectionCell.swift */; };
 		DEE63A672CDF3689002E0F55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE63A662CDF3689002E0F55 /* AppDelegate.swift */; };
 		DEE63A692CDF3689002E0F55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE63A682CDF3689002E0F55 /* SceneDelegate.swift */; };
-		DEE63A6B2CDF3689002E0F55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE63A6A2CDF3689002E0F55 /* ViewController.swift */; };
-		DEE63A6E2CDF3689002E0F55 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DEE63A6D2CDF3689002E0F55 /* Base */; };
 		DEE63A702CDF368A002E0F55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEE63A6F2CDF368A002E0F55 /* Assets.xcassets */; };
 		DEE63A732CDF368A002E0F55 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = DEE63A722CDF368A002E0F55 /* Base */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		71754D3D2CE0EE6E000FFF37 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		712956A12CE2809600B4E074 /* CurrenciesAndMetals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesAndMetals.swift; sourceTree = "<group>"; };
+		712956A32CE2817500B4E074 /* CurrenciesAndMetalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesAndMetalsView.swift; sourceTree = "<group>"; };
+		71754D2B2CE0E276000FFF37 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		71754D2D2CE0E41D000FFF37 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		71754D312CE0E58B000FFF37 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		71754D3F2CE0F85B000FFF37 /* CardCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionCell.swift; sourceTree = "<group>"; };
+		71754D422CE0FA0F000FFF37 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		71754D442CE102D6000FFF37 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		71754D462CE104A9000FFF37 /* CategoryCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionCell.swift; sourceTree = "<group>"; };
 		DEE63A632CDF3689002E0F55 /* BankApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BankApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEE63A662CDF3689002E0F55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEE63A682CDF3689002E0F55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DEE63A6A2CDF3689002E0F55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DEE63A6D2CDF3689002E0F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DEE63A6F2CDF368A002E0F55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEE63A722CDF368A002E0F55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEE63A742CDF368A002E0F55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,12 +60,59 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71754D392CE0EE49000FFF37 /* SnapKit in Frameworks */,
+				71754D352CE0E69E000FFF37 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71754D2A2CE0E265000FFF37 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				71754D2B2CE0E276000FFF37 /* UIFont+.swift */,
+				71754D2D2CE0E41D000FFF37 /* UIColor+.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		71754D2F2CE0E51B000FFF37 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				71754D302CE0E56B000FFF37 /* Main */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		71754D302CE0E56B000FFF37 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				71754D312CE0E58B000FFF37 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		71754D3E2CE0F846000FFF37 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				71754D3F2CE0F85B000FFF37 /* CardCollectionCell.swift */,
+				712956A32CE2817500B4E074 /* CurrenciesAndMetalsView.swift */,
+				71754D462CE104A9000FFF37 /* CategoryCollectionCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		71754D412CE0FA07000FFF37 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				71754D422CE0FA0F000FFF37 /* Card.swift */,
+				712956A12CE2809600B4E074 /* CurrenciesAndMetals.swift */,
+				71754D442CE102D6000FFF37 /* Category.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		DEE63A5A2CDF3689002E0F55 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +134,10 @@
 			children = (
 				DEE63A662CDF3689002E0F55 /* AppDelegate.swift */,
 				DEE63A682CDF3689002E0F55 /* SceneDelegate.swift */,
-				DEE63A6A2CDF3689002E0F55 /* ViewController.swift */,
-				DEE63A6C2CDF3689002E0F55 /* Main.storyboard */,
+				71754D2F2CE0E51B000FFF37 /* Modules */,
+				71754D412CE0FA07000FFF37 /* Data */,
+				71754D3E2CE0F846000FFF37 /* Cells */,
+				71754D2A2CE0E265000FFF37 /* Styles */,
 				DEE63A6F2CDF368A002E0F55 /* Assets.xcassets */,
 				DEE63A712CDF368A002E0F55 /* LaunchScreen.storyboard */,
 				DEE63A742CDF368A002E0F55 /* Info.plist */,
@@ -77,12 +155,17 @@
 				DEE63A5F2CDF3689002E0F55 /* Sources */,
 				DEE63A602CDF3689002E0F55 /* Frameworks */,
 				DEE63A612CDF3689002E0F55 /* Resources */,
+				71754D3D2CE0EE6E000FFF37 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BankApp;
+			packageProductDependencies = (
+				71754D342CE0E69E000FFF37 /* SnapKit */,
+				71754D382CE0EE49000FFF37 /* SnapKit */,
+			);
 			productName = BankApp;
 			productReference = DEE63A632CDF3689002E0F55 /* BankApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +194,9 @@
 				Base,
 			);
 			mainGroup = DEE63A5A2CDF3689002E0F55;
+			packageReferences = (
+				71754D332CE0E69E000FFF37 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = DEE63A642CDF3689002E0F55 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +213,6 @@
 			files = (
 				DEE63A702CDF368A002E0F55 /* Assets.xcassets in Resources */,
 				DEE63A732CDF368A002E0F55 /* Base in Resources */,
-				DEE63A6E2CDF3689002E0F55 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +223,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEE63A6B2CDF3689002E0F55 /* ViewController.swift in Sources */,
+				71754D472CE104A9000FFF37 /* CategoryCollectionCell.swift in Sources */,
+				71754D2C2CE0E276000FFF37 /* UIFont+.swift in Sources */,
+				712956A22CE2809600B4E074 /* CurrenciesAndMetals.swift in Sources */,
+				71754D402CE0F85B000FFF37 /* CardCollectionCell.swift in Sources */,
+				71754D432CE0FA0F000FFF37 /* Card.swift in Sources */,
 				DEE63A672CDF3689002E0F55 /* AppDelegate.swift in Sources */,
+				712956A42CE2817500B4E074 /* CurrenciesAndMetalsView.swift in Sources */,
 				DEE63A692CDF3689002E0F55 /* SceneDelegate.swift in Sources */,
+				71754D2E2CE0E41D000FFF37 /* UIColor+.swift in Sources */,
+				71754D322CE0E58B000FFF37 /* MainViewController.swift in Sources */,
+				71754D452CE102D6000FFF37 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DEE63A6C2CDF3689002E0F55 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DEE63A6D2CDF3689002E0F55 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DEE63A712CDF368A002E0F55 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,20 +377,20 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A8U85SKFPU;
+				DEVELOPMENT_TEAM = JBDPFCSGM2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BankApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = aurocheg.BankApp;
+				PRODUCT_BUNDLE_IDENTIFIER = noychus.BankApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -320,20 +405,20 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A8U85SKFPU;
+				DEVELOPMENT_TEAM = JBDPFCSGM2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BankApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = aurocheg.BankApp;
+				PRODUCT_BUNDLE_IDENTIFIER = noychus.BankApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -363,6 +448,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		71754D332CE0E69E000FFF37 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		71754D342CE0E69E000FFF37 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71754D332CE0E69E000FFF37 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		71754D382CE0EE49000FFF37 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 71754D332CE0E69E000FFF37 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DEE63A5B2CDF3689002E0F55 /* Project object */;
 }
