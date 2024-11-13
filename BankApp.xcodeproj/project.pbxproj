@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		712956A22CE2809600B4E074 /* CurrenciesAndMetals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712956A12CE2809600B4E074 /* CurrenciesAndMetals.swift */; };
-		712956A42CE2817500B4E074 /* CurrenciesAndMetalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712956A32CE2817500B4E074 /* CurrenciesAndMetalsView.swift */; };
+		712956A22CE2809600B4E074 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712956A12CE2809600B4E074 /* Quotes.swift */; };
+		715BFA5F2CE480BC00220146 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA5E2CE480BC00220146 /* BannerView.swift */; };
+		715BFA612CE4812B00220146 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA602CE4812B00220146 /* Banner.swift */; };
+		715BFA632CE4896A00220146 /* OperationTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA622CE4896A00220146 /* OperationTitle.swift */; };
+		715BFA652CE489CD00220146 /* OperationTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA642CE489CD00220146 /* OperationTitleView.swift */; };
+		715BFA672CE4919B00220146 /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA662CE4919B00220146 /* PlusButton.swift */; };
+		715BFA692CE49F4A00220146 /* OperationCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA682CE49F4A00220146 /* OperationCollectionCell.swift */; };
+		715BFA6B2CE49F8700220146 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA6A2CE49F8700220146 /* Operation.swift */; };
+		715BFA6D2CE4C3F900220146 /* CurrenciesAndMetals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA6C2CE4C3F900220146 /* CurrenciesAndMetals.swift */; };
+		715BFA6F2CE4C44400220146 /* QuotesHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA6E2CE4C44400220146 /* QuotesHeaderCell.swift */; };
+		715BFA712CE4C52800220146 /* QuotesMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715BFA702CE4C52800220146 /* QuotesMainCell.swift */; };
 		71754D2C2CE0E276000FFF37 /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D2B2CE0E276000FFF37 /* UIFont+.swift */; };
 		71754D2E2CE0E41D000FFF37 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D2D2CE0E41D000FFF37 /* UIColor+.swift */; };
 		71754D322CE0E58B000FFF37 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71754D312CE0E58B000FFF37 /* MainViewController.swift */; };
@@ -38,8 +47,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		712956A12CE2809600B4E074 /* CurrenciesAndMetals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesAndMetals.swift; sourceTree = "<group>"; };
-		712956A32CE2817500B4E074 /* CurrenciesAndMetalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesAndMetalsView.swift; sourceTree = "<group>"; };
+		712956A12CE2809600B4E074 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
+		715BFA5E2CE480BC00220146 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		715BFA602CE4812B00220146 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		715BFA622CE4896A00220146 /* OperationTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTitle.swift; sourceTree = "<group>"; };
+		715BFA642CE489CD00220146 /* OperationTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationTitleView.swift; sourceTree = "<group>"; };
+		715BFA662CE4919B00220146 /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
+		715BFA682CE49F4A00220146 /* OperationCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationCollectionCell.swift; sourceTree = "<group>"; };
+		715BFA6A2CE49F8700220146 /* Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		715BFA6C2CE4C3F900220146 /* CurrenciesAndMetals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesAndMetals.swift; sourceTree = "<group>"; };
+		715BFA6E2CE4C44400220146 /* QuotesHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesHeaderCell.swift; sourceTree = "<group>"; };
+		715BFA702CE4C52800220146 /* QuotesMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesMainCell.swift; sourceTree = "<group>"; };
 		71754D2B2CE0E276000FFF37 /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		71754D2D2CE0E41D000FFF37 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		71754D312CE0E58B000FFF37 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +107,9 @@
 			isa = PBXGroup;
 			children = (
 				71754D312CE0E58B000FFF37 /* MainViewController.swift */,
+				715BFA5E2CE480BC00220146 /* BannerView.swift */,
+				715BFA642CE489CD00220146 /* OperationTitleView.swift */,
+				715BFA662CE4919B00220146 /* PlusButton.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -96,9 +117,11 @@
 		71754D3E2CE0F846000FFF37 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				715BFA682CE49F4A00220146 /* OperationCollectionCell.swift */,
 				71754D3F2CE0F85B000FFF37 /* CardCollectionCell.swift */,
-				712956A32CE2817500B4E074 /* CurrenciesAndMetalsView.swift */,
 				71754D462CE104A9000FFF37 /* CategoryCollectionCell.swift */,
+				715BFA6E2CE4C44400220146 /* QuotesHeaderCell.swift */,
+				715BFA702CE4C52800220146 /* QuotesMainCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -107,7 +130,11 @@
 			isa = PBXGroup;
 			children = (
 				71754D422CE0FA0F000FFF37 /* Card.swift */,
-				712956A12CE2809600B4E074 /* CurrenciesAndMetals.swift */,
+				712956A12CE2809600B4E074 /* Quotes.swift */,
+				715BFA6C2CE4C3F900220146 /* CurrenciesAndMetals.swift */,
+				715BFA602CE4812B00220146 /* Banner.swift */,
+				715BFA622CE4896A00220146 /* OperationTitle.swift */,
+				715BFA6A2CE49F8700220146 /* Operation.swift */,
 				71754D442CE102D6000FFF37 /* Category.swift */,
 			);
 			path = Data;
@@ -223,15 +250,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				715BFA652CE489CD00220146 /* OperationTitleView.swift in Sources */,
 				71754D472CE104A9000FFF37 /* CategoryCollectionCell.swift in Sources */,
 				71754D2C2CE0E276000FFF37 /* UIFont+.swift in Sources */,
-				712956A22CE2809600B4E074 /* CurrenciesAndMetals.swift in Sources */,
+				715BFA6F2CE4C44400220146 /* QuotesHeaderCell.swift in Sources */,
+				715BFA632CE4896A00220146 /* OperationTitle.swift in Sources */,
+				715BFA612CE4812B00220146 /* Banner.swift in Sources */,
+				715BFA6B2CE49F8700220146 /* Operation.swift in Sources */,
+				712956A22CE2809600B4E074 /* Quotes.swift in Sources */,
 				71754D402CE0F85B000FFF37 /* CardCollectionCell.swift in Sources */,
 				71754D432CE0FA0F000FFF37 /* Card.swift in Sources */,
+				715BFA712CE4C52800220146 /* QuotesMainCell.swift in Sources */,
 				DEE63A672CDF3689002E0F55 /* AppDelegate.swift in Sources */,
-				712956A42CE2817500B4E074 /* CurrenciesAndMetalsView.swift in Sources */,
 				DEE63A692CDF3689002E0F55 /* SceneDelegate.swift in Sources */,
+				715BFA692CE49F4A00220146 /* OperationCollectionCell.swift in Sources */,
+				715BFA672CE4919B00220146 /* PlusButton.swift in Sources */,
+				715BFA5F2CE480BC00220146 /* BannerView.swift in Sources */,
 				71754D2E2CE0E41D000FFF37 /* UIColor+.swift in Sources */,
+				715BFA6D2CE4C3F900220146 /* CurrenciesAndMetals.swift in Sources */,
 				71754D322CE0E58B000FFF37 /* MainViewController.swift in Sources */,
 				71754D452CE102D6000FFF37 /* Category.swift in Sources */,
 			);

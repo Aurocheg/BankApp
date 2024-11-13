@@ -11,14 +11,9 @@ import SnapKit
 
 class CategoryCollectionCell: UICollectionViewCell {
     
-    private let iconView = {
+    private let iconImageView = {
         let view = UIImageView()
         view.contentMode = .scaleToFill
-        return view
-    }()
-    
-    private let iconBackgroundView = {
-        let view = UIView()
         return view
     }()
     
@@ -44,9 +39,9 @@ class CategoryCollectionCell: UICollectionViewCell {
     
     func setupData(with category: Category) {
         backgroundColor = category.color
-        iconView.image = category.image
+        iconImageView.image = category.image
         titleLabel.text = category.title
-        iconBackgroundView.backgroundColor = category.imageColor
+        iconImageView.backgroundColor = category.imageColor
     }
     
     static var reuseIdentifier: String { String(describing: self)}
@@ -55,30 +50,23 @@ class CategoryCollectionCell: UICollectionViewCell {
 private extension CategoryCollectionCell {
     func setupUI() {
         layer.cornerRadius = Const.cornerRadius
-        iconBackgroundView.layer.cornerRadius = Const.cornerRadiusIcon
+        iconImageView.layer.cornerRadius = Const.cornerRadiusIcon
         
-        contentView.addSubview(iconBackgroundView)
-        contentView.addSubview(iconView)
+        contentView.addSubview(iconImageView)
         contentView.addSubview(titleLabel)
     }
     
     func setupLayout() {
-        iconBackgroundView.snp.makeConstraints { make in
+        
+        iconImageView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(16)
-            make.top.equalToSuperview().inset(16)
+            make.top.equalTo(16)
             make.size.equalTo(Const.sizeImageColor)
         }
         
-        iconView.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(20)
-            make.top.equalTo(20)
-            make.size.equalTo(Const.sizeIcon)
-        }
-        
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(16)
-            make.trailing.equalToSuperview().inset(16)
-            make.top.equalTo(iconBackgroundView.snp.bottom).offset(8)
+            make.horizontalEdges.equalToSuperview().inset(16)
+            make.top.equalTo(iconImageView.snp.bottom).offset(8)
             make.bottom.equalToSuperview().inset(16)
         }
     }

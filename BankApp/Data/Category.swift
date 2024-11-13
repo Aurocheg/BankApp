@@ -12,7 +12,7 @@ struct Category {
     let image: UIImage?
     let title: String
     let color: UIColor?
-    var imageColor: UIColor
+    let imageColor: UIColor
     
     static func generateCategory() -> [Category] {
         [

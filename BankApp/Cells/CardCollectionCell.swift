@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 class CardCollectionCell: UICollectionViewCell {
-    private let iconView = {
+    private let iconImageView = {
         let view = UIImageView()
         view.contentMode = .scaleToFill
         return view
@@ -58,7 +58,7 @@ class CardCollectionCell: UICollectionViewCell {
     
     func setupData(with card: Card) {
         backgroundColor = card.color
-        iconView.image = card.image
+        iconImageView.image = card.image
         titleLabel.text = card.title
         valueLabel.text = card.value
         lastFourDigitsLabel.text = card.lastDigitsText
@@ -72,13 +72,13 @@ private extension CardCollectionCell {
     func setupUI() {
         layer.cornerRadius = Const.cornerRadius
         
-        contentView.addSubview(iconView)
+        contentView.addSubview(iconImageView)
         contentView.addSubview(textStackView)
         contentView.addSubview(lastFourDigitsLabel)
     }
     
     func setupLayout() {
-        iconView.snp.makeConstraints { make in
+        iconImageView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(24)
             make.leading.equalToSuperview().inset(16)
             make.size.equalTo(Const.iconSize)
@@ -86,7 +86,7 @@ private extension CardCollectionCell {
         
         textStackView.snp.makeConstraints { make in
             make.leading.equalToSuperview().inset(16)
-            make.top.equalTo(iconView.snp.bottom).offset(30)
+            make.top.equalTo(iconImageView.snp.bottom).offset(30)
         }
         
         lastFourDigitsLabel.snp.makeConstraints { make in
