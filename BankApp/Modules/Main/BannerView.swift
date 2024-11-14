@@ -33,9 +33,10 @@ class BannerView: UIView {
     }()
     
     private let exitBannerButton = {
-        let view = UIImageView()
-        view.contentMode = .scaleToFill
-        return view
+        let button = UIButton()
+        let image = UIImage(named: "exitButton")
+        button.setImage(image, for: .normal)
+        return button
     }()
     
     init(with data: Banner) {
