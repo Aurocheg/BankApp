@@ -356,6 +356,8 @@ extension MainViewController: UICollectionViewDataSource {
     }
 }
 
+extension MainViewController: UICollectionViewDelegate {}
+
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == headerTableView {
@@ -399,8 +401,6 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
 }
-
-extension MainViewController: UICollectionViewDelegate {}
 
 private enum Const {
     static let cardLineSpacing: CGFloat = 14

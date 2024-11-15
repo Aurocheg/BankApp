@@ -16,11 +16,11 @@ extension UIColor {
     }
     
     enum Category {
-        static let gray = UIColor(named: "grayColor")
+        static let gray = UIColor(named: "grayColor2")
     }
     
     enum Blocks {
-        static let gray = UIColor(named: "grayColor")
+        static let gray = UIColor(named: "grayColor2")
         static let plusButtonBackground = UIColor(named: "plusButtonBackground")
         static let bunnerColor = UIColor(named: "bannerColor")
     }

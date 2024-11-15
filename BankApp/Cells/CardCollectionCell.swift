@@ -58,10 +58,10 @@ class CardCollectionCell: UICollectionViewCell {
     
     func setupData(with card: Card) {
         backgroundColor = card.color
-        iconImageView.image = card.image
+        iconImageView.image = card.paymentSystemImage
         titleLabel.text = card.title
-        valueLabel.text = card.value
-        lastFourDigitsLabel.text = card.lastDigitsText
+        valueLabel.text = card.balance
+        lastFourDigitsLabel.text = card.cardNumber
     }
     
     static var reuseIdentifier: String { String(describing: self)}
@@ -98,5 +98,5 @@ private extension CardCollectionCell {
 
 private enum Const {
     static let cornerRadius: CGFloat = 30
-    static let iconSize = CGSize(width: 40, height: 20)
+    static let iconSize = CGSize(width: 48, height: 48)
 }
